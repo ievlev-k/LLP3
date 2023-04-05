@@ -1,0 +1,63 @@
+[
+  {
+    "name" : "create__",
+    "params" : {
+      "tableName" : "table",
+      "paramsList" : []
+    },
+    "returns" : "Success"
+  },
+  {
+    "name" : "drop__",
+    "params" : {
+      "tableName" : "table"
+    },
+    "returns" : "Success"
+  },
+  {
+    "name" : "delete__",
+    "params" : {
+      "tableName" : "table",
+      "columnName" : "column",
+      "columnType" : "type",
+      "value" : "value"
+    },
+    "returns" : "Success"
+  },
+  {
+    "name" : "insert__",
+    "params" : {
+      "tableName" : "table",
+      "paramsList" : []
+    },
+    "returns" : "Success"
+  },
+  {
+    "name" : "select__",
+    "params" : {
+      "tableName" : "table",
+      "columnName" : "column",
+      "columnType" : "type",
+      "value" : "value"
+    },
+    "returns" : "Result"
+  },
+  {
+    "name" : "join__",
+    "params" : {
+      "firstTName" : "firstTable",
+      "secondTName" : "secondTable",
+      "firstCName" : "firstColumn",
+      "secondCName" : "secondColumn"
+    },
+    "returns" : "Result"
+  },
+  {
+    "name" : "update__",
+    "params" : {
+      "tableName" : "table",
+      "paramsList" : []
+    },
+    "returns" : "Success"
+  }
+]
