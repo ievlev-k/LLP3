@@ -101,7 +101,7 @@ std::string MyStubServer::insert__(const Json::Value &paramsList, const std::str
     string string_val;
     for (int i = 0; i <  paramsList.size() / 3; i++){
         if (paramsList[i*3].asString() == "STR") {
-//            cout << "упал здесь 1" <<endl;
+
             string_val = paramsList[i*3 + 2].asCString();
             attribute_add(row_one,paramsList[i*3 + 1].asCString(),VARCHAR ,&string_val);
 
@@ -131,7 +131,7 @@ std::string MyStubServer::insert__(const Json::Value &paramsList, const std::str
 }
 
 std::string MyStubServer::create__(const Json::Value& paramsList, const std::string& tableName) {
-    std::cout << "vfd" << std::endl;
+
     if (!paramsList.isArray()) throw JsonRpcException(-1, "No list of arguments provided");
     if (tableName.empty()) throw JsonRpcException(-1, "Table name was empty");
 
@@ -234,8 +234,8 @@ std::string MyStubServer::update__(const Json::Value &paramsList, const std::str
 
     if (res1) {
         std::string res(res1);
-        return !res.empty() ? res : "empty";
-    } else return "Something went very wrong";
+        return !res.empty() ? res : "";
+    } else return "error";
 }
 
 
@@ -290,7 +290,7 @@ std::string MyStubServer::delete__(const std::string &columnName, const std::str
 }
 int main() {
 
-    int port = 9898;
+    int port = 2525;
 
     HttpServer httpserver(port);
     MyStubServer s(httpserver,

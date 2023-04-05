@@ -51,7 +51,7 @@ class StubClient : public jsonrpc::Client {
                 throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
         }
 
-    std::string join__(const std::string& firstCName, const std::string& firstTName, const std::string& secondCName, const std::string& secondTName) throw (jsonrpc::JsonRpcException)
+        std::string join__(const std::string& firstCName, const std::string& firstTName, const std::string& secondCName, const std::string& secondTName) throw (jsonrpc::JsonRpcException)
         {
             Json::Value p;
             p["firstCName"] = firstCName;
@@ -66,16 +66,16 @@ class StubClient : public jsonrpc::Client {
         }
 
         std::string insert__(const Json::Value& paramsList, const std::string& tableName) throw (jsonrpc::JsonRpcException)
-            {
-                Json::Value p;
-                p["paramsList"] = paramsList;
-                p["tableName"] = tableName;
-                Json::Value result = this->CallMethod("insert__",p);
-                if (result.isString())
-                    return result.asString();
-                else
-                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
-            }
+        {
+            Json::Value p;
+            p["paramsList"] = paramsList;
+            p["tableName"] = tableName;
+            Json::Value result = this->CallMethod("insert__",p);
+            if (result.isString())
+                return result.asString();
+            else
+                throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
+        }
 
         std::string select__(const std::string& columnName, const std::string& columnType, const std::string& tableName, const std::string& value) throw (jsonrpc::JsonRpcException)
         {
